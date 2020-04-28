@@ -13,26 +13,27 @@ public:
 	~World();
 
 	Square* arrSquare[ARRAY_Y][ARRAY_X];
-	Figure* tempFigure;
 
 	int sumSquare;
 	int sumPoint;
 
-	bool regulationFigure(int futureX, int futureY);
-	bool regulationSquare(int squarefutureX, int squarefutureY);
-	bool whoseSquare(int squarefutureX, int squarefutureY);
+	bool regulationFigure(const int futureX, const int futureY);
+	bool whoseSquare(const int squarefutureX, const int squarefutureY);
 
 	void moveFigure(const int x, const int y);
-
-	void checkSumSquareHorizon();
-	void countSumSquare(int x, int y);
-	void delHorizonSquare(int y);
-
-	void calculationFutureXY(int &futureX, int &futureY, const int index);
 	void rotationFigure();
-	void rotationMatrixSquare(const int index, int &numberViolation);
-
 	void addFigure(Figure* figure);
+	void checkSumSquareHorizon();
+
+private:
+	Figure* tempFigure;
+
+	void calculationFutureXY(int &futureX, int &futureY, const int index);//
+	void rotationMatrixSquare(const int index, int &numberViolation);
+	void countSumSquare(const int x, const int y);
+	void delHorizonSquare(const int y);
+
+	bool regulationSquare(const int squarefutureX, const int squarefutureY);
 };
 
 #endif

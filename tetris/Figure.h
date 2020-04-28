@@ -9,14 +9,15 @@ class Figure
 {
 public:
 	Figure();
-	virtual ~Figure();
+	~Figure();
 
 	int getXFigure();
 	int getYFigure();
 
 	void moveFigure(const int xFigure, const int yFigure);
-	Square* getArrSquareFigure(int index);
+	Square* getArrSquareFigure(const int index);
 
+protected:
 	int xFigure;
 	int yFigure;
 	Square* arrSquareFigure[QUANTITY_SQUARE];
@@ -25,27 +26,27 @@ public:
 class TFigure : public Figure
 {
 public:
-	TFigure(int xFigure, int yFigure);
-	~TFigure();
+	TFigure(const int xFigure, const int yFigure);
 
+private:
 	void createSquareFigure();
 };
 
 class QFigure : public Figure
 {
 public:
-	QFigure(int xFigure, int yFigure);
-	~QFigure();
+	QFigure(const int xFigure, const int yFigure);
 
+private:
 	void createSquareFigure();
 };
 
 class IFigure : public Figure
 {
 public:
-	IFigure(int xFigure, int yFigure);
-	~IFigure();
+	IFigure(const int xFigure, const int yFigure);
 
+private:
 	void createSquareFigure();
 };
 
@@ -53,35 +54,36 @@ class ZFigure : public Figure
 {
 public:
 	ZFigure(int xFigure, int yFigure);
-	~ZFigure();
 
+private:
 	void createSquareFigure();
 };
 
 class SFigure : public Figure
 {
 public:
-	SFigure(int xFigure, int yFigure);
-	~SFigure();
+	SFigure(const int xFigure, const int yFigure);
 
+private:
 	void createSquareFigure();
 };
 
 class JFigure : public Figure
 {
 public:
-	JFigure(int xFigure, int yFigure);
-	~JFigure();
+	JFigure(const int xFigure, const int yFigure);
 
+private:
 	void createSquareFigure();
 };
 
 class LFigure : public Figure
 {
 public:
-	LFigure(int xFigure, int yFigure);
-	~LFigure();
+	LFigure(const int xFigure, const int yFigure);
 
+private:
 	void createSquareFigure();
 };
+
 #endif

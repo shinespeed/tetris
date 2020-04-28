@@ -4,6 +4,10 @@ Figure:: Figure() {}
 
 Figure::~Figure() 
 {
+	for (int i = 0; i < QUANTITY_SQUARE; i++) 
+	{
+		if (arrSquareFigure[i] != nullptr) delete arrSquareFigure[i];
+	}
 }
 
 void Figure::moveFigure(const int xFigure, const int yFigure)
@@ -17,7 +21,7 @@ void Figure::moveFigure(const int xFigure, const int yFigure)
 	this->yFigure = yFigure;
 }
 
-Square* Figure::getArrSquareFigure(int index)
+Square* Figure::getArrSquareFigure(const int index)
 {
 	return arrSquareFigure[index];
 }
@@ -31,15 +35,11 @@ int Figure::getYFigure()
 	return yFigure;
 }
 
-TFigure::TFigure(int _xFigure, int _yFigure)
+TFigure::TFigure(const int _xFigure, const int _yFigure)
 {
 	xFigure = _xFigure;
 	yFigure = _yFigure;
 	createSquareFigure();
-}
-
-TFigure::~TFigure()
-{
 }
 
 void TFigure::createSquareFigure() 
@@ -50,16 +50,11 @@ void TFigure::createSquareFigure()
 	arrSquareFigure[3] = new Square(xFigure + TFIGURE_COORD_4_X, yFigure + TFIGURE_COORD_4_Y);
 }
 
-QFigure::QFigure(int _xFigure, int _yFigure)
+QFigure::QFigure(const int _xFigure, const int _yFigure)
 {
 	xFigure = _xFigure;
 	yFigure = _yFigure;
 	createSquareFigure();
-}
-
-QFigure::~QFigure()
-{
-
 }
 
 void QFigure::createSquareFigure()
@@ -70,15 +65,12 @@ void QFigure::createSquareFigure()
 	arrSquareFigure[3] = new Square(xFigure + QFIGURE_COORD_4_X, yFigure + QFIGURE_COORD_4_Y);
 }
 
-IFigure::IFigure(int _xFigure, int _yFigure)
+IFigure::IFigure(const int _xFigure, const int _yFigure)
 {
 	xFigure = _xFigure;
 	yFigure = _yFigure;
 	createSquareFigure();
 }
-
-IFigure::~IFigure()
-{}
 
 void IFigure::createSquareFigure()
 {
@@ -88,16 +80,11 @@ void IFigure::createSquareFigure()
 	arrSquareFigure[3] = new Square(xFigure + IFIGURE_COORD_4_X, yFigure + IFIGURE_COORD_4_Y);
 }
 
-ZFigure::ZFigure(int _xFigure, int _yFigure)
+ZFigure::ZFigure(const int _xFigure, const int _yFigure)
 {
 	xFigure = _xFigure;
 	yFigure = _yFigure;
 	createSquareFigure();
-}
-
-ZFigure::~ZFigure()
-{
-
 }
 
 void ZFigure::createSquareFigure()
@@ -108,16 +95,11 @@ void ZFigure::createSquareFigure()
 	arrSquareFigure[3] = new Square(xFigure + ZFIGURE_COORD_4_X, yFigure + ZFIGURE_COORD_4_Y);
 }
 
-JFigure::JFigure(int _xFigure, int _yFigure)
+JFigure::JFigure(const int _xFigure, const int _yFigure)
 {
 	xFigure = _xFigure;
 	yFigure = _yFigure;
 	createSquareFigure();
-}
-
-JFigure::~JFigure()
-{
-
 }
 
 void JFigure::createSquareFigure()
@@ -128,16 +110,11 @@ void JFigure::createSquareFigure()
 	arrSquareFigure[3] = new Square(xFigure + JFIGURE_COORD_4_X, yFigure + JFIGURE_COORD_4_Y);
 }
 
-SFigure::SFigure(int _xFigure, int _yFigure)
+SFigure::SFigure(const int _xFigure, const int _yFigure)
 {
 	xFigure = _xFigure;
 	yFigure = _yFigure;
 	createSquareFigure();
-}
-
-SFigure::~SFigure()
-{
-
 }
 
 void SFigure::createSquareFigure()
@@ -148,16 +125,11 @@ void SFigure::createSquareFigure()
 	arrSquareFigure[3] = new Square(xFigure + SFIGURE_COORD_4_X, yFigure + SFIGURE_COORD_4_Y);
 }
 
-LFigure::LFigure(int _xFigure, int _yFigure)
+LFigure::LFigure(const int _xFigure, const int _yFigure)
 {
 	xFigure = _xFigure;
 	yFigure = _yFigure;
 	createSquareFigure();
-}
-
-LFigure::~LFigure()
-{
-
 }
 
 void LFigure::createSquareFigure()

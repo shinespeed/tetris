@@ -4,8 +4,7 @@
 class Square
 {
 public:
-
-	Square(int x_Square, int y_Square);
+	Square(const int x_Square, const int y_Square);
 
 	void moveSquare(int xSquare, int ySquare);
 

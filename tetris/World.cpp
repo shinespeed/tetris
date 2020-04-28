@@ -20,7 +20,7 @@ World::~World()
 	}
 }
 
-bool World::regulationFigure(int futureX, int futureY)
+bool World::regulationFigure(const int futureX, const int futureY)
 {
 	int tempX = 0;
 	int tempY = 0;
@@ -43,7 +43,7 @@ bool World::regulationFigure(int futureX, int futureY)
 	}
 }
 
-bool World::regulationSquare(int squarefutureX, int squarefutureY)
+bool World::regulationSquare(const int squarefutureX, const int squarefutureY)
 {
 	if (squarefutureX >= 0 && squarefutureX < ARRAY_X && squarefutureY < ARRAY_Y)
 	{
@@ -59,7 +59,7 @@ bool World::regulationSquare(int squarefutureX, int squarefutureY)
 	else return false;
 }
 
-bool World::whoseSquare(int squarefutureX, int squarefutureY)
+bool World::whoseSquare(const int squarefutureX, const int squarefutureY)
 {
 	bool squareFigure = false;
 
@@ -137,7 +137,7 @@ void World::checkSumSquareHorizon()
 	}
 }
 
-void World::delHorizonSquare(int y) 
+void World::delHorizonSquare(const int y)
 {
 	sumPoint += INC_POINT;
 	for (int i = y; i > 1; --i) 
@@ -151,7 +151,7 @@ void World::delHorizonSquare(int y)
 	}
 }
 
-void World::countSumSquare(int x, int y)
+void World::countSumSquare(const int x, const int y)
 {
 	if (arrSquare[y][x] != nullptr) 
 	{
