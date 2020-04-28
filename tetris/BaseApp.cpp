@@ -39,15 +39,15 @@ BaseApp::BaseApp(int xSize, int ySize) :
 	mChiBuffer = (CHAR_INFO*)malloc((X_SIZE+1)*(Y_SIZE+1)*sizeof(CHAR_INFO));
 
 	mDwBufferSize.X = X_SIZE + 1;
-	mDwBufferSize.Y = Y_SIZE + 1;		// размер буфера данных
+	mDwBufferSize.Y = Y_SIZE + 1;		
 
 	mDwBufferCoord.X = 0;
-	mDwBufferCoord.Y = 0;				// координаты €чейки
+	mDwBufferCoord.Y = 0;				
 
 	mLpWriteRegion.Left = 0;
 	mLpWriteRegion.Top = 0;
 	mLpWriteRegion.Right = X_SIZE + 1;
-	mLpWriteRegion.Bottom = Y_SIZE + 1;	// пр€моугольник дл€ чтени€
+	mLpWriteRegion.Bottom = Y_SIZE + 1;	
 
 
 	for (int x=0; x<X_SIZE+1; x++)
