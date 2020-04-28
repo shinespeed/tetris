@@ -1,6 +1,4 @@
-﻿// Copyright 2009-2014 Blam BaseApps, Inc. All Rights Reserved.
-
-#include "Game.h"
+﻿#include "Game.h"
 
 enum numberFigure
 {
