@@ -117,7 +117,7 @@ void Game::start()
 {
 	createFigure();
 
-	if (timeStep >= GAME_ITERATION)
+	if (timeStep >= world.gameSpeed)
 	{
 		if (world.regulationFigure(moveX, moveY + 1))
 		{
@@ -172,9 +172,8 @@ void Game::graphBorders()
 void Game::Render()
 {
 	graphBorders();
-	SetString(3, 19, "> Point: ");
-	SetString(14, 19, std::to_string(world.sumPoint));
-
+	SetString(2, 19, "> Point: " + std::to_string(world.sumPoint));
+	SetString(16, 19, "LEVEL: " + std::to_string(world.level));
 	for (int i = 0; i < ARRAY_Y; ++i)
 	{
 		for (int j = 0; j < ARRAY_X; ++j)

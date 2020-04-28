@@ -8,9 +8,9 @@ const int ARRAY_X = 15;
 const int ARRAY_Y = 15;
 
 //speed iteration game
-const float GAME_ITERATION = 0.3;
+const float START_ITERATION = 0.6;
 
-const int INC_POINT = 15;
+const int START_POINT = 15;
 
 //key code
 const int RIGHT = 77;

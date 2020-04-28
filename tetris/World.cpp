@@ -1,8 +1,12 @@
 #include "World.h"
 
-World::World(): 
-	sumSquare(0), 
-	sumPoint(0)
+World::World() :
+	sumSquare(0),
+	sumPoint(0),
+	level(1),
+	sumHorizonSquare(0),
+	gameSpeed(START_ITERATION),
+	pointUp(START_POINT)
 {}
 
 World::~World()
@@ -121,6 +125,21 @@ void World::rotationFigure()
 	moveFigure(tempFigure->getXFigure(), tempFigure->getYFigure());
 }
 
+void World::checkLevel()
+{
+	if (sumHorizonSquare == 4) 
+	{
+		sumHorizonSquare = 0;
+		++level;
+		gameSpeed = gameSpeed - (pow(gameSpeed, 3) * 0.9);
+		pointUp*=1.5;
+	}
+	else
+	{
+		++sumHorizonSquare;
+	}
+}
+
 void World::checkSumSquareHorizon() 
 {
 	for (int i = 0; i < ARRAY_Y; ++i) 
@@ -131,6 +150,7 @@ void World::checkSumSquareHorizon()
 		}
 		if (sumSquare == ARRAY_X) 
 		{
+			checkLevel();
 			delHorizonSquare(i);
 		}
 		sumSquare = 0;
@@ -139,7 +159,7 @@ void World::checkSumSquareHorizon()
 
 void World::delHorizonSquare(const int y)
 {
-	sumPoint += INC_POINT;
+	sumPoint += pointUp;
 	for (int i = y; i > 1; --i) 
 	{
 		for (int j = 0; j < ARRAY_X; ++j) 

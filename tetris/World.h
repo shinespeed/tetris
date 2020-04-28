@@ -4,6 +4,7 @@
 #include "GlobalConstant.h"
 #include "Figure.h"
 #include "Square.h"
+#include <cmath>
 #include <iostream>
 
 class World
@@ -16,10 +17,16 @@ public:
 
 	int sumSquare;
 	int sumPoint;
+	int pointUp;
+	int level;
+	int sumHorizonSquare;
+	
+	float gameSpeed;
 
 	bool regulationFigure(const int futureX, const int futureY);
 	bool whoseSquare(const int squarefutureX, const int squarefutureY);
 
+	void checkLevel();
 	void moveFigure(const int x, const int y);
 	void rotationFigure();
 	void addFigure(Figure* figure);
