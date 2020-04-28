@@ -56,8 +56,8 @@ void Game::gameOverCheck(Figure* figure)
 
 	for (int i = 0; i < QUANTITY_SQUARE; ++i) 
 	{
-		tempX = figure->getArrSquareFigure(i)->xSquare;
-		tempY = figure->getArrSquareFigure(i)->ySquare;
+		tempX = figure->getArrSquareFigure(i)->m_xSquare;
+		tempY = figure->getArrSquareFigure(i)->m_ySquare;
 		if (world.arrSquare[tempY][tempX] != nullptr) 
 		{
 			gameCheck = false;
@@ -141,17 +141,17 @@ void Game::renderFutureFigure()
 	{
 		for (int j = 0; j < QUANTITY_SQUARE; ++j)
 		{
-			SetChar(i + FUTURE_FIGURE_X - 1, j + FUTURE_FIGURE_Y, 0);
+			SetChar(i + FUTURE_FIGURE_X - 1, j + FUTURE_FIGURE_Y, L' ', BLACK);
 		}
 	}
 
 	for (int i = 0; i < QUANTITY_SQUARE; ++i) 
 	{
 
-		tempX = furureFigure->getArrSquareFigure(i)->xSquare - START_COORD_X;
-		tempY = furureFigure->getArrSquareFigure(i)->ySquare - START_COORD_Y;
+		tempX = furureFigure->getArrSquareFigure(i)->m_xSquare - START_COORD_X;
+		tempY = furureFigure->getArrSquareFigure(i)->m_ySquare - START_COORD_Y;
 
-		SetChar(tempX + FUTURE_FIGURE_X, tempY + FUTURE_FIGURE_Y,  10);
+		SetChar(tempX + FUTURE_FIGURE_X, tempY + FUTURE_FIGURE_Y, 10, furureFigure->getArrSquareFigure(i)->m_color);
 	}
 }
 
@@ -163,7 +163,7 @@ void Game::graphBorders()
 		{
 			if (i == BORDER_START_X || j == BORDER_START_Y || i == BORDER_END_X || j == BORDER_END_Y || (i == BORDER_1_X) && (j <= BORDER_1_Y) || (j == BORDER_2_Y))
 			{
-				SetChar(i, j, L'#');
+				SetChar(i, j, L'#', WHITE);
 			}
 		}
 	}
@@ -181,11 +181,11 @@ void Game::Render()
 		{
 			if (world.arrSquare[i][j] == nullptr)
 			{
-				SetChar(j + PLAYING_FIELD_X, i + PLAYING_FIELD_Y, L'.');
+				SetChar(j + PLAYING_FIELD_X, i + PLAYING_FIELD_Y, L'.', GRAY);
 			}
 			else
 			{
-				SetChar(j + PLAYING_FIELD_X, i + PLAYING_FIELD_Y, 10);
+				SetChar(j + PLAYING_FIELD_X, i + PLAYING_FIELD_Y, 10, world.arrSquare[i][j]->m_color);
 			}
 		}
 	}

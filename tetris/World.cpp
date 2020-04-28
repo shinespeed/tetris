@@ -28,8 +28,8 @@ bool World::regulationFigure(const int futureX, const int futureY)
 
 	for (int i = 0; i < QUANTITY_SQUARE; ++i)
 	{
-	    tempX = tempFigure->getArrSquareFigure(i)->xSquare + (futureX - tempFigure->getXFigure());
-		tempY = tempFigure->getArrSquareFigure(i)->ySquare + (futureY - tempFigure->getYFigure());
+	    tempX = tempFigure->getArrSquareFigure(i)->m_xSquare + (futureX - tempFigure->getXFigure());
+		tempY = tempFigure->getArrSquareFigure(i)->m_ySquare + (futureY - tempFigure->getYFigure());
 
 		if (!regulationSquare(tempX, tempY)) ++numberViolation;
 	} 
@@ -76,8 +76,8 @@ bool World::whoseSquare(const int squarefutureX, const int squarefutureY)
 
 void World::calculationFutureXY(int &futureX, int &futureY, const int index)
 {
-	futureX = tempFigure->getArrSquareFigure(0)->xSquare + tempFigure->getArrSquareFigure(0)->ySquare - tempFigure->getArrSquareFigure(index)->ySquare;
-	futureY = tempFigure->getArrSquareFigure(index)->xSquare + tempFigure->getArrSquareFigure(0)->ySquare - tempFigure->getArrSquareFigure(0)->xSquare;
+	futureX = tempFigure->getArrSquareFigure(0)->m_xSquare + tempFigure->getArrSquareFigure(0)->m_ySquare - tempFigure->getArrSquareFigure(index)->m_ySquare;
+	futureY = tempFigure->getArrSquareFigure(index)->m_xSquare + tempFigure->getArrSquareFigure(0)->m_ySquare - tempFigure->getArrSquareFigure(0)->m_xSquare;
 }
 
 void World::rotationMatrixSquare(const int index, int &numberViolation)
@@ -89,10 +89,10 @@ void World::rotationMatrixSquare(const int index, int &numberViolation)
 	
 	arrSquare[tempY][tempX] = tempFigure->getArrSquareFigure(index);
 
-	arrSquare[tempFigure->getArrSquareFigure(index)->ySquare][tempFigure->getArrSquareFigure(index)->xSquare] = nullptr;
+	arrSquare[tempFigure->getArrSquareFigure(index)->m_ySquare][tempFigure->getArrSquareFigure(index)->m_xSquare] = nullptr;
 
-	tempFigure->getArrSquareFigure(index)->xSquare = tempX;
-	tempFigure->getArrSquareFigure(index)->ySquare = tempY;
+	tempFigure->getArrSquareFigure(index)->m_xSquare = tempX;
+	tempFigure->getArrSquareFigure(index)->m_ySquare = tempY;
 }
 
 void World::rotationFigure()
@@ -163,14 +163,14 @@ void World::moveFigure(const int x, const int y)
 {
 	for (int i = 0; i < QUANTITY_SQUARE; i++)
 	{
-		arrSquare[tempFigure->getArrSquareFigure(i)->ySquare][tempFigure->getArrSquareFigure(i)->xSquare] = nullptr;
+		arrSquare[tempFigure->getArrSquareFigure(i)->m_ySquare][tempFigure->getArrSquareFigure(i)->m_xSquare] = nullptr;
 	}
 
 	tempFigure->moveFigure(x, y);
 
 	for (int i = 0; i < QUANTITY_SQUARE; i++)
 	{
-		arrSquare[tempFigure->getArrSquareFigure(i)->ySquare][tempFigure->getArrSquareFigure(i)->xSquare] = tempFigure->getArrSquareFigure(i);
+		arrSquare[tempFigure->getArrSquareFigure(i)->m_ySquare][tempFigure->getArrSquareFigure(i)->m_xSquare] = tempFigure->getArrSquareFigure(i);
 	}
 }
 
@@ -180,6 +180,6 @@ void World::addFigure(Figure* figure)
 
 	for (int i = 0; i < QUANTITY_SQUARE; i++) 
 	{
-		arrSquare[figure->getArrSquareFigure(i)->ySquare][figure->getArrSquareFigure(i)->xSquare] = figure->getArrSquareFigure(i);
+		arrSquare[figure->getArrSquareFigure(i)->m_ySquare][figure->getArrSquareFigure(i)->m_xSquare] = figure->getArrSquareFigure(i);
 	}
 }

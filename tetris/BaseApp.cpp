@@ -54,7 +54,7 @@ BaseApp::BaseApp(int xSize, int ySize) :
 	{
 		for (int y=0; y<Y_SIZE+1; y++)
 		{
-			SetChar(x, y, L' ');
+			SetChar(x, y, L' ', BLACK);
 		}
 	}
 }
@@ -64,22 +64,22 @@ BaseApp::~BaseApp()
 	free(mChiBuffer);
 }
 
-void BaseApp::SetChar(int x, int y, wchar_t c)
+void BaseApp::SetChar(int x, int y, wchar_t c, int color)
 {
 	mChiBuffer[x + (X_SIZE+1)*y].Char.UnicodeChar = c;
-	mChiBuffer[x + (X_SIZE+1)*y].Attributes = FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_RED;
+	mChiBuffer[x + (X_SIZE+1)*y].Attributes = color;
 }
 
 void BaseApp::SetString(int x, int y, string str) 
 {
 	for (int i = 0; i < 5; i++)
 	{
-		SetChar(x + i, y, 0);
+		SetChar(x + i, y, L' ', BLACK);
 	}
 
 	for (int i = 0; i < str.length(); i++) 
 	{
-		SetChar(x + i, y, str[i]);
+		SetChar(x + i, y, str[i], WHITE);
 	}
 }
 

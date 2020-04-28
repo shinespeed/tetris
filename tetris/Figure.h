@@ -20,6 +20,7 @@ public:
 protected:
 	int xFigure;
 	int yFigure;
+
 	Square* arrSquareFigure[QUANTITY_SQUARE];
 };
 

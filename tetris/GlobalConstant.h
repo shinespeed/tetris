@@ -45,6 +45,18 @@ const int BORDER_2_Y = 17;
 const int PLAYING_FIELD_X = 2;
 const int PLAYING_FIELD_Y = 2;
 
+//color CODE
+const int WHITE = 7;
+const int BLACK = 0;
+const int RED = 12;
+const int GREEN = 2;
+const int BLUE = 1;
+const int PURPURE = 3;
+const int YELLOW = 6;
+const int GRAY = 8;
+const int LILAS = 5;
+const int VIOLET = 13;
+
 //coord square figure 
 const int TFIGURE_COORD_1_X = 0;
 const int TFIGURE_COORD_2_X = -1;

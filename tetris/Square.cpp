@@ -1,10 +1,13 @@
 #include "Square.h"
 
-Square::Square(const int x_Square, const int y_Square): xSquare(x_Square), ySquare(y_Square)
+Square::Square(const int xSquare, const int ySquare, const int color): 
+	m_xSquare(xSquare), 
+	m_ySquare(ySquare),
+	m_color(color)
 {}
 
 void Square::moveSquare(const int xSquare, const int ySquare)
 {
-	this->xSquare += xSquare;
-	this->ySquare += ySquare;
+	this->m_xSquare += xSquare;
+	this->m_ySquare += ySquare;
 }

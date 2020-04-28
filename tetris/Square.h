@@ -4,12 +4,13 @@
 class Square
 {
 public:
-	Square(const int x_Square, const int y_Square);
+	Square(const int xSquare, const int ySquare, const int color);
 
 	void moveSquare(int xSquare, int ySquare);
 
-	int xSquare;
-	int ySquare;
+	int m_color;
+	int m_xSquare;
+	int m_ySquare;
 };
 
 #endif

@@ -33,7 +33,7 @@ public:
 
 	void Run();
 
-	void SetChar(int x, int y, wchar_t c);
+	void SetChar(int x, int y, wchar_t c, int color);
 	void SetString(int x, int y, string str);
 	wchar_t GetChar(int x, int y);
 
