@@ -1,5 +1,3 @@
-// Copyright 2009-2014 Blam BaseApps, Inc. All Rights Reserved.
-
 #ifndef BASEAPP_H
 #define BASEAPP_H
 
