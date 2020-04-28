@@ -16,7 +16,7 @@ const int INC_POINT = 15;
 const int RIGHT = 77;
 const int LEFT = 75;
 const int DOWN = 80;
-const int SPACE = 80;
+const int SPACE = 32;
 
 const int START_COORD_X = 7;
 const int START_COORD_Y = 0;
